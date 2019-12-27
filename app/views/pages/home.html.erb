@@ -1,3 +1,12 @@
 <h1>Bienvenue</h1>
 
 <p>Ceci est un test <%=@test%>.</p>
+<% if @test == 5 %>
+    le test est bon
+<% else %>
+    ce n'est pas ce que vous voulez
+    <%end%>
+
+<% @test.times do |i| %>
+    <%= i %>
+    <%end%>
