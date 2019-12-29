@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @test = 6
+    @var = 12
   end
 end
