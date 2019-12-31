@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'article'=>'article#index'
+  post 'article'=>'article#create'
 
   root 'pages#home'
 
