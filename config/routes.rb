@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'article'=>'article#index'
   get 'article/:id'=>'article#show'
+  patch 'article/:id'=>'article#update'
   post 'article'=>'article#create'
 
   root 'pages#home'
