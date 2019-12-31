@@ -2,4 +2,8 @@
 <%@articles.each do |article|%>
     <p><%= article.title%></p>
     <%end%>
+ <%= form_tag "/article", method: "post" do %>
+        <input type="text" name="title" />
+        <input type="submit" value="Ajouter un article" />
+      <% end %>
 
