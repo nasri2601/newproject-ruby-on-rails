@@ -1,6 +1,6 @@
 <h1>Ma liste d'article</h1>
 <%@articles.each do |article|%>
-    <p><%= article.title%></p>
+    <p><a href="article/<%= article.id%>"><%= article.title%></a></p>
     <%end%>
  <%= form_tag "/article", method: "post" do %>
         <input type="text" name="title" />
