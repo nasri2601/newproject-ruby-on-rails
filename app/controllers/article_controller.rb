@@ -7,6 +7,11 @@ class ArticleController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def destroy
+    Article.find(params[:id]).destroy
+    redirect_to "/article"
+  end
+
   def update
 
    Article.find(params[:id]).update title: params[:title]
