@@ -1,6 +1,7 @@
 class ArticleController < ApplicationController
   def index
     @articles = Article.all
+    @categories = Category.all
   end
 
   def show
@@ -17,10 +18,10 @@ class ArticleController < ApplicationController
    Article.find(params[:id]).update title: params[:title]
      redirect_to "/article/#{params[:id]}"
   end
- 
 
- def create
-  Article.create title: params[:title]
+  def create
+  Article.create title: params[:title], category_id: params[:category_id]
+  
     redirect_to "/article"
  end
 
