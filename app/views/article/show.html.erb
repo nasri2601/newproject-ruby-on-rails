@@ -1,6 +1,6 @@
 
 <h1><%= @article.title %></h1>
-<p><%= @article.content%></p>
+
 
 <%= form_tag "/article/#{@article.id}", method: "patch" do %>
 <input type="text" name="title" value="<%= @article.title %>" />
