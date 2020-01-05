@@ -16,14 +16,30 @@
   </div>
 </div>
     <%end%>
+
 <%= form_tag "/article", method: "post" do %>
-        <input type="text" name="title"placeholder="title" />
-        <textarea type="text" name="content"placeholder="contenu" /></textarea>
-        <select name="category_id">
-        <% @categories.each do |category| %>
-          <option value="<%= category.id %>"><%= category.name %></option>
-        <% end %>
-      </select>
+        
+  <label for="input">Ecrire le titre</label>
+        <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Titre article</span>
+  </div>
+  <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+</div>
+
+   
+        <div class="mb-3">
+    <label for="validationTextarea">Contenu de l'article</label>
+    <textarea class="form-control is-invalid" type="text" name="content" id="validationTextarea" placeholder="inscrire ici le contenu" required></textarea>
+    <div class="invalid-feedback">
+      écrire le contenu
+    </div>
+       
+      <select name="category_id" class="form-control">
+      <% @categories.each do |category| %>
+  <option value="<%= category.id %>"><%= category.name %></option>
+  <% end %>
+</select>
         <input type="submit" value="Ajouter un article" />
 <% end %>
 </div>
