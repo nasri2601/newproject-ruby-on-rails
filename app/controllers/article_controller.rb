@@ -15,12 +15,19 @@ class ArticleController < ApplicationController
 
   def update
 
-   Article.find(params[:id]).update title: params[:title]
+   @article = Article.find(params[:id])
+   if @article.update title: params[:title]
      redirect_to "/article/#{params[:id]}"
+   else
+    render'show'
+   end
+
+  
+
   end
 
   def create
-  Article.create title: params[:title], category_id: params[:category_id]
+  Article.create title: params[:title], category_id: params[:category_id],content: params[:content]
   
     redirect_to "/article"
  end
