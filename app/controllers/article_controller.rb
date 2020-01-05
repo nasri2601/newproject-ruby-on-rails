@@ -16,7 +16,7 @@ class ArticleController < ApplicationController
   def update
 
    @article = Article.find(params[:id])
-   if @article.update title: params[:title]
+   if @article.update title: params[:title],content: params[:content]
      redirect_to "/article/#{params[:id]}"
    else
     render'show'
