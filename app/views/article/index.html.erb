@@ -1,12 +1,20 @@
+<div class="container">
 <h1>Ma liste d'articles</h1>
 <%@articles.each do |article|%>
-    <p><a href="article/<%= article.id%>"> 
-    <% if article.category %>
-    <%= article.title%> (<%= article.category.name %>)
-    <% else %>
-        <%= article.title %>
-      <% end %>
-      </a></p>
+  <div class="card">
+  <div class="card-header">
+  
+  </div>
+  <div class="card-body">
+  <h5 class="card-title"><% if article.category %>
+  <%= article.title%> (<%= article.category.name %>)
+  <% else %>
+      <%= article.title %>
+    <% end %></h5>
+    <p class="card-text">Découvrir l'article</p>
+    <a href="article/<%= article.id%>" class="btn btn-primary">Go read</a>
+  </div>
+</div>
     <%end%>
 <%= form_tag "/article", method: "post" do %>
         <input type="text" name="title"placeholder="title" />
@@ -18,5 +26,10 @@
       </select>
         <input type="submit" value="Ajouter un article" />
 <% end %>
+</div>
+
+
+
+
 
 
