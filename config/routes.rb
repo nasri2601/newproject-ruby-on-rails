@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   patch 'article/:id'=>'article#update'
   delete 'article/:id'=>'article#destroy'
   post 'article'=>'article#create'
+  
 
   root 'pages#home'
 
